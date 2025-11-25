@@ -8,13 +8,11 @@ setInterval(updateTime, 1000);
 updateTime();
 
 // Llamada simple a una API pública
-fetch("https://api.chucknorris.io/jokes/random")
+fetch("https://api.popcat.xyz/refranes")
     .then(res => res.json())
     .then(data => {
         document.getElementById("api-result").textContent =
-            "Dato de API: " + data.value;
+            "Refrán: " + data.refran;
     });
-
-// Uso de variable de entorno (solo demostración)
-const saludo = import.meta.env?.VITE_SALUDO || "Variable no definida";
-console.log("Variable de entorno:", saludo);
+// Variable de entorno
+console.log("Variable desde Vercel:", process.env.VITE_SALUDO);
